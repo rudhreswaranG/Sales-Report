@@ -41,11 +41,12 @@ This project involves the analysis of sales data for a hardware company, with th
 
     `SELECT SUM(transactions.sales_amount) FROM transactions INNER JOIN date ON transactions.order_date=date.date where date.year=2020
 and transactions.market_code="Mark001";`
+USED THE SQL TO CHECK THE RESULT OF THE VISUALIZATION IS CORRECT
 
 
 Data Analysis Using Power BI
 ============================
+1) Cleaned the data using the power query editor and changed the currency in the currency column amount to "inr" and used it for the visualization.
+2) then loaded the dataset into power bi engine and created the relationship between the table.
+3) Then created the charts and started to design the report in the interactive way. 
 
-1. Formula to create norm_amount column
-
-`= Table.AddColumn(#"Filtered Rows", "norm_amount", each if [currency] = "USD" or [currency] ="USD#(cr)" then [sales_amount]*75 else [sales_amount], type any)`
